@@ -1,4 +1,4 @@
-- name: install aerc
+- name: install firefox
   community.general.pacman:
    name: 
     - firefox
