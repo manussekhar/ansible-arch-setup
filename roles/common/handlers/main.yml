@@ -1,0 +1,12 @@
+---
+- name: Enable sddm
+  service:
+    name: sddm
+    enabled: true
+    masked: no
+
+- name: Enable NetworkManager
+  service:
+    name: NetworkManager
+    enabled: true
+    masked: no

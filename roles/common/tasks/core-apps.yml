@@ -1,18 +1,11 @@
 - name: install basic utils, shells, apps
   community.general.pacman:
    name:
-    - xorg
-    - kitty
-    - vlc
-    - gimp
-    - git
-    - thefuck
     - tmux
-    - lsd
-    - vim
-    - source-highlight
     - tree
     - base-devel
+    - neovim
+    - kitty
    state: present
 
 - name: Install archival utils
@@ -32,7 +25,6 @@
 - name: Install download utils
   pacman:
     name:
-      - aria2
       - curl
       - wget
     state: present
@@ -40,4 +32,9 @@
 - name: Install ImageMagick
   pacman:
     name: imagemagick
+    state: present
+
+- name: Install Font Cascadia code
+  pacman:
+    name: ttf-cascadia-code
     state: present

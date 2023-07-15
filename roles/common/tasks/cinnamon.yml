@@ -3,5 +3,7 @@
    name: 
     - cinnamon
     - sddm
-    - gnome-terminal
    state: present
+  notify:
+    - Enable sddm
+    - Enable NetworkManager 
