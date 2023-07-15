@@ -1,5 +1,5 @@
 - name: install aerc
   community.general.pacman:
    name: 
-    - aerc
+    - firefox
    state: present 

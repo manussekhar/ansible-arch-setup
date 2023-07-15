@@ -14,33 +14,18 @@
 - include: zsh.yml
   when: setup_zsh == True
 
-# Install and configure spacevim
-- include: spacevim.yml
-  when: install_spacevim == True
-
 # Install KDE and Additional Plasma Applications
-- include: kde.yml
-  when: install_kde == True
+- include: cinnamon.yml
+  when: install_cinnamon == True
 
 # Web Browser
-- include: "{{browser}}.yml"
+- include: "firefox.yml"
+  when: install_browser == True
 
-# Terminal web browsers
-- include: terminal_browsers.yml
-  when: install_terminal_browsers == True
-
-# Office
-- include: office.yml
-  when: install_office == True
-
-# Console based Email
-- include: aerc.yml
-  when: install_aerc == True
-  
 # AUR apps
 - include: aur.yml
   when: use_aur == True
 
-# Dotfiles
-- include: dotfiles.yml
-  when: pull_dotfiles == True
+# # Dotfiles
+# - include: dotfiles.yml
+#   when: pull_dotfiles == True

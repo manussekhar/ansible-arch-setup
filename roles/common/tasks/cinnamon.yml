@@ -1,0 +1,7 @@
+- name: install Cinnamon apps
+  community.general.pacman:
+   name: 
+    - cinnamon
+    - sddm
+    - gnome-terminal
+   state: present

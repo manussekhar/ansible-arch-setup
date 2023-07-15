@@ -4,7 +4,7 @@
 # for the playbook to function.
 
 ## User info
-username: keith
+username: manu
 
 ## Task Configuration
 setup_zsh: True
@@ -19,26 +19,12 @@ dotfiles:
     rcup_flags: -fx README.md
 
 ## Desktop
-install_kde: True
+install_cinnamon: True
 
 ## App Preferences
 ## ===========================
 # Web Browser
-# Value can be: vivaldi, firefox, brave, or chromium
-browser: vivaldi
-
-## When set to True, will install elinks and w3m
-install_terminal_browsers: True
-
-## Installs LibreOffice Fresh when True
-install_office: True
-
-## Spacevim? You know you need it
-install_spacevim: True
-## ===========================
-
-## Console-based email client
-install_aerc: True
+install_browser: True
 
 ## AUR vars
 ## ===========================
@@ -48,10 +34,4 @@ aur:
     dir: aur
     packages:
         - yay
-        - downgrade
-        - zplug
-        - miller
-        - myrepos
-        - ctmg
-        - spiped
 ## ===========================
