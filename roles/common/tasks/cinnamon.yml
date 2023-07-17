@@ -3,6 +3,7 @@
    name: 
     - cinnamon
     - sddm
+    - nemo-fileroller
    state: present
   notify:
     - Enable sddm

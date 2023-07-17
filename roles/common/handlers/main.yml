@@ -10,3 +10,13 @@
     name: NetworkManager
     enabled: true
     masked: no
+
+- name: Copy kitty dotfiles
+  command: cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{ username}}/.config/kitty/kitty.conf
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy zsh dotfiles
+  command: cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{ username}}/.config/kitty/kitty.conf
+  become: True
+  become_user: "{{ username }}"

@@ -1,9 +1,7 @@
-- name: Clone user dotfiles
-  git: repo={{ dotfiles.url }} dest=/home/{{ username }}/{{ dotfiles.destination }} accept_hostkey=yes update=no
+- name: Clone user dot files
+  git: repo={{ dotfiles.url }} dest=/tmp/{{ dotfiles.destination }} accept_hostkey=yes update=no
   become: True
   become_user: "{{ username }}"
-
-- name: Install user dotfiles
-  command: rcup -d /home/{{ username}}/{{ dotfiles.destination}} {{ dotfiles.rcup_flags }}
-  become: True
-  become_user: "{{ username }}" 
+  notify:
+   - Copy kitty dotfiles
+   - Enable NetworkManager 

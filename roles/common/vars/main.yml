@@ -14,9 +14,8 @@ setup_zsh: True
 pull_dotfiles: True
 
 dotfiles:
-    url: https://github.com/linuxpiper/dotfiles.git
-    destination: projects/dotfiles
-    rcup_flags: -fx README.md
+    url: https://github.com/manussekhar/dotfiles.git
+    destination: config_repo
 
 ## Desktop
 install_cinnamon: True

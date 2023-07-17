@@ -3,7 +3,6 @@
    update_cache: yes
    upgrade: yes
 
-
 # Configure pacman (colorize and repos)
 - include: pacman.yml
 
@@ -26,6 +25,6 @@
 - include: aur.yml
   when: use_aur == True
 
-# # Dotfiles
-# - include: dotfiles.yml
-#   when: pull_dotfiles == True
+# Dotfiles
+- include: dotfiles.yml
+  when: pull_dotfiles == True

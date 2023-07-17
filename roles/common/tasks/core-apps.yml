@@ -6,6 +6,7 @@
     - base-devel
     - neovim
     - kitty
+    - code
    state: present
 
 - name: Install archival utils
