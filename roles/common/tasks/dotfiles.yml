@@ -3,5 +3,6 @@
   become: True
   become_user: "{{ username }}"
   notify:
-   - Copy kitty dotfiles
+   - Create kitty dot file
+   - Copy kitty dot file
    - Enable NetworkManager 

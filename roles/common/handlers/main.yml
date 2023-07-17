@@ -11,7 +11,12 @@
     enabled: true
     masked: no
 
-- name: Copy kitty dot files
-  command: mkdir -p /home/{{ username}}/.config/kitty && cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{ username}}/.config/kitty/kitty.conf
+- name: Create kitty dot file
+  command: mkdir -p /home/{{ username}}/.config/kitty
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy kitty dot file
+  command: cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{ username}}/.config/kitty/kitty.conf
   become: True
   become_user: "{{ username }}"
