@@ -4,6 +4,7 @@
   community.general.pacman:
    name: 
     - zsh
+    - zsh-completions
     - zsh-syntax-highlighting
    state: present
 
