@@ -8,6 +8,5 @@
   aur:
     name: "{{ aur.packages }}"
     dir: /tmp/
-    become: True
-    become_user: "{{ username }}"
+    user: "{{ username }}"
     skip_pgp: yes
