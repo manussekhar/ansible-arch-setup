@@ -8,13 +8,6 @@
     - zsh-syntax-highlighting
    state: present
 
-- name: install fzf for zsh
-  community.general.pacman:
-   name: 
-    - fzf
-   state: present
-
-
 - name: change "{{ username }}"'s shell to zsh
   become: true
   user:
