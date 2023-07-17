@@ -3,6 +3,11 @@
   become: True
   become_user: "{{ username }}"
   notify:
-   - Create kitty dot file
+   - Enable NetworkManager
+   - Enable sddm
+   - Create kitty config directory
    - Copy kitty dot file
-   - Enable NetworkManager 
+   - Copy zshenv
+   - Create zsh config directory
+   - Copy zshrc
+   - Copy aliases
