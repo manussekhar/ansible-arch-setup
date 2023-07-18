@@ -2,17 +2,34 @@
   git: repo={{ dotfiles.url }} dest=/tmp/{{ dotfiles.destination }} accept_hostkey=yes update=no
   become: True
   become_user: "{{ username }}"
-  notify:
-   - Enable NetworkManager
-   - Enable sddm
-   - Create kitty config directory
-   - Copy kitty dot file
-   - Copy zshenv
-   - Create zsh config directory
-   - Copy zshrc
-   - Copy aliases
-   - Copy default wall paper
-   - Install theme files
-   - Install icon files
-   - Copy cinnamon settings
-   - Restore cinnamon settings
+
+- name: Create kitty config directory
+  command: mkdir -p /home/{{ username}}/.config/kitty
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy kitty dot file
+  command: cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{username}}/.config/kitty/kitty.conf
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy zshenv
+  command: cp /tmp/{{ dotfiles.destination}}/.zshenv /home/{{username}}/.zshenv
+  become: True
+  become_user: "{{ username }}"
+
+- name: Create zsh config directory
+  command: mkdir -p /home/{{ username}}/.config/zsh
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy zshrc
+  command: cp /tmp/{{ dotfiles.destination}}/zsh/.zshrc /home/{{username}}/.config/zsh/.zshrc
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy aliases
+  command: cp /tmp/{{ dotfiles.destination}}/zsh/aliases /home/{{username}}/.config/zsh/aliases
+  become: True
+  become_user: "{{ username }}"
+

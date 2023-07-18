@@ -5,6 +5,8 @@
     - sddm
     - nemo-fileroller
    state: present
-  notify:
-    - Enable sddm
-    - Enable NetworkManager 
+
+- name: Create User Directories
+  command: xdg-user-dirs-update
+  become: True
+  become_user: "{{ username }}" 

@@ -27,8 +27,7 @@ iconfiles:
     url: https://github.com/dracula/gtk/files/5214870/Dracula.zip
     destination: icon_repo
 
-## Desktop
-install_cinnamon: True
+
 
 ## App Preferences
 ## ===========================
