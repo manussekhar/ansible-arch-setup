@@ -40,3 +40,8 @@
   command: cp /tmp/{{ dotfiles.destination}}/zsh/aliases /home/{{ username}}/.config/zsh/aliases
   become: True
   become_user: "{{ username }}"
+
+- name: Create User Directories
+  command: xdg-user-dirs-update
+  become: True
+  become_user: "{{ username }}"
