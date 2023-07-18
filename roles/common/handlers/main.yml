@@ -56,6 +56,17 @@
   become_user: "{{ username }}"
 
 - name: Restore cinnamon settings
-  command: dconf load / < /home/{{ username}}/dconf.dump
+  shell:
+    cmd: dconf load / < /home/{{ username}}/dconf.dump
+  become: True
+  become_user: "{{ username }}"
+
+- name: Install theme files
+  command: curl -L {{themefiles.url}} -o /tmp/{{themefiles.destination}}/Dracula.zip && unzip /tmp/{{themefiles.destination}}/Dracula.zip -d /tmp/{{themefiles.destination}}/Dracula && mkdir /home/{{username}}/.themes/Dracula && mv {{themefiles.destination}}/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
+  become: True
+  become_user: "{{ username }}"
+
+- name: Install icon files
+  command: curl -L {{iconfiles.url}} -o /tmp/{{iconfiles.destination}}/Dracula.zip && unzip /tmp/{{iconfiles.destination}}/Dracula.zip -d /tmp/{{iconfiles.destination}} && mv /tmp/{{iconfiles.destination}}/Dracula /home/{{username}}/.icons/
   become: True
   become_user: "{{ username }}"
