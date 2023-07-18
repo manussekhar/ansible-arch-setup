@@ -38,6 +38,11 @@
     name: imagemagick
     state: present
 
+- name: Install Flameshot
+  pacman:
+    name: flameshot
+    state: present
+
 - name: Install Font Cascadia code
   pacman:
     name: ttf-cascadia-code
