@@ -30,7 +30,7 @@
 
 - name: Move Dracula icons
   shell:
-   cmd: mv /tmp/Dracula-icons/Dracula/* /home/{{username}}/.icons/Dracula
+   cmd: mv /tmp/Dracula-icons/Dracula/Dracula/* /home/{{username}}/.icons/Dracula
   become: True
   become_user: "{{ username }}"
   
