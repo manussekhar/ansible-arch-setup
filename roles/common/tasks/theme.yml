@@ -29,7 +29,8 @@
   become_user: "{{ username }}"
 
 - name: Copy Dracula theme
-  command: mv /tmp/Dracula-theme/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
+  shell:
+   cmd: mv /tmp/Dracula-theme/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
   become: True
   become_user: "{{ username }}"
   
