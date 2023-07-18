@@ -10,8 +10,6 @@
     - exa
     - xdg-user-dirs
    state: present
-  notify:
-   - Create User Directories
 
 - name: Install archival utils
   pacman:

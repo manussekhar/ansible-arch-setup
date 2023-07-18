@@ -14,7 +14,7 @@
   become_user: "{{ username }}"
 
 - name: Create user theme folder
-  command: mkdir /-p home/{{username}}/.themes/Dracula
+  command: mkdir -p home/{{username}}/.themes/Dracula
   become: True
   become_user: "{{username}}"
 
@@ -29,7 +29,7 @@
   become_user: "{{ username }}"
 
 - name: Copy Dracula theme
-  command: mv /tmpDracula-theme/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
+  command: mv /tmp/Dracula-theme/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
   become: True
   become_user: "{{ username }}"
   
