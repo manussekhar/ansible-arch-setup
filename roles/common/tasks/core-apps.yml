@@ -42,3 +42,8 @@
   pacman:
     name: ttf-cascadia-code
     state: present
+
+- name: Install Ubuntu fonts
+  pacman:
+    name: ttf-ubuntu-font-family
+    state: present
