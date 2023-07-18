@@ -14,7 +14,7 @@
   become_user: "{{ username }}"
 
 - name: Create user theme folder
-  command: mkdir -p home/{{username}}/.themes/Dracula
+  command: mkdir -p /home/{{username}}/.themes/Dracula
   become: True
   become_user: "{{username}}"
 
