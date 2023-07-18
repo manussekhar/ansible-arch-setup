@@ -28,8 +28,9 @@
   become: True
   become_user: "{{ username }}"
 
-- name: Copy Dracula icons
-  command: mv /tmp/Dracula-icons/Dracula/* /home/{{username}}/.icons/Dracula
+- name: Move Dracula icons
+  shell:
+   cmd: mv /tmp/Dracula-icons/Dracula/* /home/{{username}}/.icons/Dracula
   become: True
   become_user: "{{ username }}"
   
