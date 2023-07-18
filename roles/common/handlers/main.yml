@@ -10,6 +10,10 @@
     name: NetworkManager
     enabled: true
     masked: no
+- name: Create User Directories
+  command: xdg-user-dirs-update
+  become: True
+  become_user: "{{ username }}"
 
 - name: Create kitty config directory
   command: mkdir -p /home/{{ username}}/.config/kitty
@@ -51,7 +55,7 @@
   become: True
   become_user: "{{ username }}"
 
-- name: Create User Directories
-  command: xdg-user-dirs-update
+- name: Restore cinnamon settings
+  command: dconf load / < /home/{{ username}}/dconf.dump
   become: True
   become_user: "{{ username }}"
