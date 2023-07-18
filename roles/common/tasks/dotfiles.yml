@@ -9,12 +9,17 @@
   become_user: "{{ username }}"
 
 - name: Copy kitty dot file
-  command: cp /tmp/{{ dotfiles.destination}}/kitty/kitty.conf /home/{{username}}/.config/kitty/kitty.conf
+  command: cp /tmp/{{dotfiles.destination}}/kitty/kitty.conf /home/{{username}}/.config/kitty/kitty.conf
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy kitty diff file
+  command: cp /tmp/{{dotfiles.destination}}/kitty/diff.conf /home/{{username}}/.config/kitty/diff.conf
   become: True
   become_user: "{{ username }}"
 
 - name: Copy zshenv
-  command: cp /tmp/{{ dotfiles.destination}}/.zshenv /home/{{username}}/.zshenv
+  command: cp /tmp/{{dotfiles.destination}}/.zshenv /home/{{username}}/.zshenv
   become: True
   become_user: "{{ username }}"
 
