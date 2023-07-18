@@ -1,0 +1,35 @@
+- name: Delete temp theme folder
+  command: rm -rf /tmp/Dracula-theme
+  become: True
+  become_user: "{{ username }}"
+
+- name: Delete user theme folder
+  command: rm -rf /home/{{username}}/.themes/Dracula
+  become: True
+  become_user: "{{ username }}"
+
+- name: Create temp theme folder 
+  command: mkdir -p /tmp/Dracula-theme
+  become: True
+  become_user: "{{ username }}"
+
+- name: Create user theme folder
+  command: mkdir /-p home/{{username}}/.themes/Dracula
+  become: True
+  become_user: "{{username}}"
+
+- name: Download Dracula theme
+  command:  curl -L {{themefiles.url}} -o /tmp/Dracula-theme/Dracula.zip 
+  become: True
+  become_user: "{{ username }}"
+
+- name: Unzip Dracula theme
+  command: unzip -o /tmp/Dracula-theme/Dracula.zip -d /tmp/Dracula-theme/Dracula 
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy Dracula theme
+  command: mv /tmpDracula-theme/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
+  become: True
+  become_user: "{{ username }}"
+  

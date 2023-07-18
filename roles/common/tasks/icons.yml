@@ -1,0 +1,35 @@
+- name: Delete temp icons folder
+  command: rm -rf /tmp/Dracula-icons
+  become: True
+  become_user: "{{ username }}"
+
+- name: Delete user icons folder
+  command: rm -rf /home/{{username}}/.icons/Dracula
+  become: True
+  become_user: "{{ username }}"
+
+- name: Create temp icons folder 
+  command: mkdir -p /tmp/Dracula-icons
+  become: True
+  become_user: "{{ username }}"
+
+- name: Create user icons folder
+  command: mkdir -p /home/{{username}}/.icons/Dracula
+  become: True
+  become_user: "{{username}}"
+
+- name: Download Dracula icons
+  command:  curl -L {{iconfiles.url}} -o /tmp/Dracula-icons/Dracula.zip 
+  become: True
+  become_user: "{{ username }}"
+
+- name: Unzip Dracula icons
+  command: unzip -o /tmp/Dracula-icons/Dracula.zip -d /tmp/Dracula-icons/Dracula 
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy Dracula icons
+  command: mv /tmp/Dracula-icons/Dracula/* /home/{{username}}/.icons/Dracula
+  become: True
+  become_user: "{{ username }}"
+  

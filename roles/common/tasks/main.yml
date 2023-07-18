@@ -25,6 +25,13 @@
 - include: aur.yml
   when: use_aur == True
 
+# theme and icons
+- include: theme.yml
+  when: pull_themefiles == True
+
+- include: icons.yml
+  when: pull_themefiles == True
+
 # Dotfiles
 - include: dotfiles.yml
   when: pull_dotfiles == True

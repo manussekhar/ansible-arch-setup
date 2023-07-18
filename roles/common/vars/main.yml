@@ -16,6 +16,7 @@ pull_dotfiles: True
 dotfiles:
     url: https://github.com/manussekhar/dotfiles.git
     destination: config_repo
+
 pull_themefiles: True
 
 themefiles:

@@ -60,14 +60,3 @@
     cmd: dconf load / < /home/{{ username}}/dconf.dump
   become: True
   become_user: "{{ username }}"
-
-- name: Install theme files
-  shell: 
-   cmd: mkdir -p /tmp/{{themefiles.destination}} && curl -L {{themefiles.url}} -o /tmp/{{themefiles.destination}}/Dracula.zip && unzip -o /tmp/{{themefiles.destination}}/Dracula.zip -d /tmp/{{themefiles.destination}}/Dracula && mkdir -p /home/{{username}}/.themes/Dracula && mv /tmp{{themefiles.destination}}/Dracula/gtk-master/* /home/{{username}}/.themes/Dracula
-  become: True
-  become_user: "{{ username }}"
-
-- name: Install icon files
-  command: mkdir -p /tmp/{{iconfiles.destination}} && curl -L {{iconfiles.url}} -o /tmp/{{iconfiles.destination}}/Dracula.zip && unzip -o /tmp/{{iconfiles.destination}}/Dracula.zip -d /tmp/{{iconfiles.destination}} && mv /tmp/{{iconfiles.destination}}/Dracula /home/{{username}}/.icons/Dracula
-  become: True
-  become_user: "{{ username }}"
