@@ -4,7 +4,7 @@
   community.general.pacman:
    name: 
     - zsh
-    - zsh-completions
+    - zsh-autosuggestions
     - zsh-syntax-highlighting
    state: present
 

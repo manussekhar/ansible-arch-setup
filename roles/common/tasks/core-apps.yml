@@ -9,6 +9,7 @@
     - code
     - exa
     - xdg-user-dirs
+    - bpytop
    state: present
 
 - name: Install archival utils
@@ -41,6 +42,16 @@
 - name: Install Flameshot
   pacman:
     name: flameshot
+    state: present
+
+- name: Install Obsidian
+  pacman:
+    name: obsidian
+    state: present
+
+- name: Install OpenJdk
+  pacman:
+    name: jdk-openjdk
     state: present
 
 - name: Install Font Cascadia code

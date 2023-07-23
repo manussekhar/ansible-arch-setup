@@ -43,4 +43,5 @@ aur:
     packages:
         - yay
         - xviewer
+        - icaclient
 ## ===========================
