@@ -10,6 +10,7 @@
     - exa
     - xdg-user-dirs
     - bpytop
+    - evince
    state: present
 
 - name: Install archival utils
@@ -53,6 +54,12 @@
   pacman:
     name: jdk-openjdk
     state: present
+
+- name: Install flatpak
+  pacman:
+    name: flatpak
+    state: present
+
 
 - name: Install Font Cascadia code
   pacman:
