@@ -1,6 +1,10 @@
 - name: install basic utils, shells, apps
   community.general.pacman:
    name:
+    - cinnamon
+    - firefox
+    - sddm
+    - nemo-fileroller
     - tmux
     - tree
     - base-devel
@@ -11,62 +15,32 @@
     - xdg-user-dirs
     - bpytop
     - evince
+    - exa
+    - xclip
+    - rofi
+    - blueberry
+    - timeshift
+    - atool
+    - p7zip
+    - unrar
+    - unzip
+    - xz
+    - zip
+    - bzip2
+    - gzip
+    - tar
+    - curl
+    - wget
+    - imagemagick
+    - flameshot
+    - obsidian
+    - jdk-openjdk
+    - flatpak
+    - ttf-cascadia-code
+    - ttf-ubuntu-font-family
    state: present
 
-- name: Install archival utils
-  pacman:
-    name:
-      - atool
-      - p7zip
-      - unrar
-      - unzip
-      - xz
-      - zip
-      - bzip2
-      - gzip
-      - tar
-      - exa
-    state: present
-
-- name: Install download utils
-  pacman:
-    name:
-      - curl
-      - wget
-    state: present
-
-- name: Install ImageMagick
-  pacman:
-    name: imagemagick
-    state: present
-
-- name: Install Flameshot
-  pacman:
-    name: flameshot
-    state: present
-
-- name: Install Obsidian
-  pacman:
-    name: obsidian
-    state: present
-
-- name: Install OpenJdk
-  pacman:
-    name: jdk-openjdk
-    state: present
-
-- name: Install flatpak
-  pacman:
-    name: flatpak
-    state: present
-
-
-- name: Install Font Cascadia code
-  pacman:
-    name: ttf-cascadia-code
-    state: present
-
-- name: Install Ubuntu fonts
-  pacman:
-    name: ttf-ubuntu-font-family
-    state: present
+- name: Create User Directories
+  command: xdg-user-dirs-update
+  become: True
+  become_user: "{{ username }}" 

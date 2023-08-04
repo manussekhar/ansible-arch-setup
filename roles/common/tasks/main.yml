@@ -9,16 +9,9 @@
 # Basic apps (vlc, kitty, etc.)
 - include: core-apps.yml
 
-# Install Cinnamon
-- include: cinnamon.yml
-
 # Install and configure zsh
 - include: zsh.yml
   when: setup_zsh == True
-
-# Web Browser
-- include: "firefox.yml"
-  when: install_browser == True
 
 # AUR apps
 - include: aur.yml

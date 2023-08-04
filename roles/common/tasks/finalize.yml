@@ -15,6 +15,12 @@
     name: cronie
     enabled: true
     masked: no
+
+- name: Create User Directories
+  command: xdg-user-dirs-update
+  become: True
+  become_user: "{{ username }}" 
+
 - name: Copy default wall paper
   command: cp /tmp/{{ dotfiles.destination}}/1.jpg /home/{{username}}/1.jpg
   become: True
