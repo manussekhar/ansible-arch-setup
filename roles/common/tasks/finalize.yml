@@ -10,6 +10,11 @@
     enabled: true
     masked: no
 
+- name: Enable Cronie
+  service:
+    name: cronie
+    enabled: true
+    masked: no
 - name: Copy default wall paper
   command: cp /tmp/{{ dotfiles.destination}}/1.jpg /home/{{username}}/1.jpg
   become: True

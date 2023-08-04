@@ -44,4 +44,5 @@ aur:
         - yay
         - xviewer
         - timeshift
+        - zsh-theme-powerlevel10k-git
 ## ===========================
