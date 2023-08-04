@@ -38,3 +38,14 @@
   become: True
   become_user: "{{ username }}"
 
+- name: Create neovim directory 
+  command: mkdir -p /home/{{ username}}/.config/nvim
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy neovim config
+  command: cp /tmp/{{ dotfiles.destination}}/nvim/init.vim /home/{{username}}/.config/nvim/init.vim
+  become: True
+  become_user: "{{ username }}"
+
+
