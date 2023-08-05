@@ -25,7 +25,7 @@ Minimum requirement is to have a Arch linux installation with minimal setup with
 ***NOTE: You must use --recurse-submodules for this to work***
 
 ### Step 2: Install Ansible
-`sudo pacman -Sy git qansible`
+`sudo pacman -Sy git ansible`
 
 ### Step 3: Update your system (optional)
 `sudo pacman -Syu`
