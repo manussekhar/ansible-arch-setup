@@ -46,4 +46,6 @@ aur:
         - timeshift
         - zsh-theme-powerlevel10k-git
         - pamac-aur
+        - gitwatch-git
+
 ## ===========================
