@@ -6,7 +6,6 @@
     - zsh
     - zsh-autosuggestions
     - zsh-syntax-highlighting
-    - zsh-theme-powerlevel10k-git
    state: present
 
 - name: change "{{ username }}"'s shell to zsh
