@@ -33,6 +33,11 @@
   become: True
   become_user: "{{ username }}"
 
+- name: Copy powerlevel10k
+  command: cp /tmp/{{ dotfiles.destination}}/zsh/.p10k.zsh /home/{{username}}/.config/zsh/.p10k.zsh
+  become: True
+  become_user: "{{ username }}"
+
 - name: Copy aliases
   command: cp /tmp/{{ dotfiles.destination}}/zsh/aliases /home/{{username}}/.config/zsh/aliases
   become: True
@@ -47,5 +52,16 @@
   command: cp /tmp/{{ dotfiles.destination}}/nvim/init.vim /home/{{username}}/.config/nvim/init.vim
   become: True
   become_user: "{{ username }}"
+
+- name: Create rofi directory 
+  command: mkdir -p /home/{{ username}}/.config/rofi
+  become: True
+  become_user: "{{ username }}"
+
+- name: Copy rofi config
+  command: cp /tmp/{{ dotfiles.destination}}/rofi/config.rasi /home/{{username}}/.config/rofi/config.rasi
+  become: True
+  become_user: "{{ username }}"
+
 
 
