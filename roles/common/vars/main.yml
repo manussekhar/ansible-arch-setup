@@ -45,4 +45,5 @@ aur:
         - xviewer
         - timeshift
         - zsh-theme-powerlevel10k-git
+        - pamac-aur
 ## ===========================

@@ -2,9 +2,13 @@
   community.general.pacman:
    name:
     - cinnamon
+    - nemo-fileroller
     - firefox
     - sddm
     - nemo-fileroller
+    - neofetch
+    - neovim
+    - flameshot
     - tmux
     - tree
     - base-devel
@@ -14,8 +18,10 @@
     - exa
     - xdg-user-dirs
     - bpytop
+    - gitwatch-git
     - evince
     - exa
+    - iwd
     - xclip
     - rofi
     - bluez
@@ -37,6 +43,7 @@
     - flameshot
     - obsidian
     - jdk-openjdk
+    - maven
     - flatpak
     - ttf-cascadia-code
     - ttf-ubuntu-font-family
