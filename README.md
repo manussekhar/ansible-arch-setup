@@ -6,7 +6,9 @@
     - [Step 4: Update the username variable (critical)](#step-4-update-the-username-variable-critical)
     - [Step 5: Run the Playbook](#step-5-run-the-playbook)
     - [Step 6: Reboot](#step-6-reboot)
-  - [What does it do for me?](
+
+
+[Screenshot](images/screenshot.png)
 
 
 # Ansible Arch Linux Setup Project (Cinnamon)
