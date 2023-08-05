@@ -8,8 +8,7 @@
     - [Step 6: Reboot](#step-6-reboot)
 
 
-[Screenshot](images/screenshot.png)
-
+![Screenshot](https://github.com/manussekhar/ansible-arch-setup/blob/main/images/screenshot.png)
 
 # Ansible Arch Linux Setup Project (Cinnamon)
 This is a fork of original project which was aiming for KDE. The main use for this project is to have a minimal install of Arch with Cinnamon DE and bare minimum tools to get started. Dracula theme is applied for eye candy.
@@ -26,7 +25,7 @@ Minimum requirement is to have a Arch linux installation with minimal setup with
 ***NOTE: You must use --recurse-submodules for this to work***
 
 ### Step 2: Install Ansible
-`sudo pacman -Sy git ansible`
+`sudo pacman -Sy git qansible`
 
 ### Step 3: Update your system (optional)
 `sudo pacman -Syu`
