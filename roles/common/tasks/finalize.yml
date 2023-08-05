@@ -16,6 +16,12 @@
     enabled: true
     masked: no
 
+- name: Enable Bluetooth
+  service:
+    name: bluetooth
+    enabled: true
+    masked: no
+
 - name: Create User Directories
   command: xdg-user-dirs-update
   become: True

@@ -18,6 +18,8 @@
     - exa
     - xclip
     - rofi
+    - bluez
+    - bluez-utils
     - blueberry
     - timeshift
     - atool
